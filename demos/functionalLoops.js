@@ -49,9 +49,12 @@ console.log("PRICE OF SOUP: ", menu["lunch"][1].price);
 
 // Object.keys(menu).forEach(m=> menu[m].forEach(i=> console.log(i.name, i.price)))
 displayItem = i => console.log("\t", i.name, i.price);
-displaySection = m => { 
+displaySection = m => {
     console.log(m + ":"); //headingf
     menu[m].forEach(displayItem); //child loop
 };
 Object.keys(menu).forEach(displaySection); //section loop
+
+
+["apples", "banana", "cherry"].forEach((fruit, index, list) => console.log(index, fruit, list.length));
 
