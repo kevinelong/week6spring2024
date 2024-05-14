@@ -22,13 +22,14 @@ let academyMembers = [
 ];
 
 console.log(`\nWho is the Academy Member whose ID is 187?`);
-console.log( academyMembers.find(m => m.memID === 187).name );
+console.log(academyMembers.find(m => m.memID === 187).name);
 
-console.log(`\nWho has been in at least 3 films?`)
-academyMembers.filter(m => m.films.length >= 3).forEach(m=>console.log(m.name))
+console.log(`\nWho has been in at least 3 films?`);
+academyMembers.filter(m => m.films.length >= 3).forEach(m => console.log(m.name));
 
 console.log(`\nWho has a name that starts with "Bob"?`);
-academyMembers.filter(m => m.name.startsWith("Bob")).forEach(m=>console.log(m.name))
+academyMembers.filter(m => m.name.startsWith("Bob")).forEach(m => console.log(m.name));
 
-
-// HARDER: Which Academy
+//HARDER?
+console.log(`\nWhich Academy Members have been in a film that starts with "A"`);
+academyMembers.filter(m => m.films.filter(f => f.startsWith("A")).length).forEach(m => console.log(m.name));
