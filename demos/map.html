@@ -15,7 +15,7 @@
 
     pinList.forEach(pin => {
         const div = document.createElement("div");
-        div.innerHTML = `<div class="pin">O<div>${pin.name} ${pin.x} ${pin.y}</div></div>`;
+        div.innerHTML = `<div class="pin">📍<div>${pin.name} ${pin.x} ${pin.y}</div></div>`;
         div.style.position = "absolute";
         div.style.left = pin.x + "px";
         div.style.top = pin.y + "px";
