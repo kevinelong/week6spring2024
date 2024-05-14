@@ -1,0 +1,24 @@
+<style>
+.pin{color: gold;}
+.pin div{display:none; background: white; color:black; padding: 1rem;}
+.pin:hover div{display:block;}
+</style>
+<body style="margin:0;">
+    <div id="mapTarget" style="position:relative; background: darkblue;width: 500px; height: 400px;"></div>
+</body>
+<script>
+    const pinList = [
+        { name: "here", x: 130, y: 200 },
+        { name: "there", x: 310, y: 250 },
+        { name: "elsewhere", x: 250, y: 100 },
+    ];
+
+    pinList.forEach(pin => {
+        const div = document.createElement("div");
+        div.innerHTML = `<div class="pin">O<div>${pin.name} ${pin.x} ${pin.y}</div></div>`;
+        div.style.position = "absolute";
+        div.style.left = pin.x + "px";
+        div.style.top = pin.y + "px";
+        mapTarget.appendChild(div);
+    });
+</script>
