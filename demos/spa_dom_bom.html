@@ -17,13 +17,13 @@
 </body>
 <script>
     const pageContent = { //Object AKA dictionary
-        apple: "<b>Apples</b> are for eating!!!",
-        cherry: "<b>Cherries</b> are for icecream sundays!!!",
-        banana: "<b>Bannanas</b> are for Pudding!!!"
+        "/apple/": "<b>Apples</b> are for eating!!!",
+        "/cherry/": "<b>Cherries</b> are for icecream sundays!!!",
+        "/banana/": "<b>Bannanas</b> are for Pudding!!!"
     }
     // Object.entries(pageContent).forEach(([keyPageName, valueContent]) => {
     for(keyPageName in pageContent){ // in includes just the keys
-        nav.innerHTML += `<button id="${keyPageName}">${keyPageName.toUpperCase()}</button>`;
+        nav.innerHTML += `<button id="${keyPageName}">${keyPageName.toUpperCase().replaceAll("/", " ")}</button>`;
     };
 
     const buttonNodeList = document.querySelectorAll("nav button");
