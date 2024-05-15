@@ -1,0 +1,55 @@
+<style>
+    .selected{
+        background-color: black;
+        color: white;
+    }
+</style>
+<body>
+    <h2>DOM Document Object Model</h2>
+    <h2>BOM Browser Object Model</h2>
+    <h2>SPA Single Page Application</h2>
+    <nav id="nav">
+        <!-- <button id="apple">Apple "Page"</button>
+        <button id="banana">Banana "Page"</button>
+        <button id="cherry">Cherry "Page"</button> -->
+    </nav>
+    <article id="page">Select a "Page"</article>
+</body>
+<script>
+    const pageContent = { //Object AKA dictionary
+        apple: "<b>Apples</b> are for eating!!!",
+        cherry: "<b>Cherries</b> are for icecream sundays!!!",
+        banana: "<b>Bannanas</b> are for Pudding!!!"
+    }
+    // Object.entries(pageContent).forEach(([keyPageName, valueContent]) => {
+    for(keyPageName in pageContent){ // in includes just the keys
+        nav.innerHTML += `<button id="${keyPageName}">${keyPageName.toUpperCase()}</button>`;
+    };
+
+    const buttonNodeList = document.querySelectorAll("nav button");
+    buttonNodeList.forEach(b => b.addEventListener("click", handlePageButton));
+
+    function handlePageButton(event) {
+        buttonNodeList.forEach(b => b.classList.remove("selected"));
+        event.target.classList.add("selected");
+
+        const pageName = event.target.id;
+        const html = pageContent[pageName];
+        page.innerHTML = html;
+        
+    }
+
+
+    // apple.addEventListener("click", handlePageButton);
+    // banana.addEventListener("click", handlePageButton);
+    // cherry.addEventListener("click", handlePageButton);
+
+    /********** DOM BOM ********
+        window = {
+            document:{ body:{innerHTML: ""} },
+            location: {},
+            history:{},
+            XMLHTTPRequest: ()=>{}
+        }
+    ******************************/
+</script>
