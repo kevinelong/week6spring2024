@@ -57,6 +57,6 @@
         removeButton.addEventListener("click", e => e.target.parentElement.remove());
         box.appendChild(removeButton);
 
-        article.appendChild(box);
+        article.insertBefore(box, addItem); //instead of .appendChild()
     });//end click
 </script>
