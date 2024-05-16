@@ -1,0 +1,65 @@
+<style>
+    .box {
+        display: inline-flex;
+        border: 1px solid black;
+        width: 100px;
+        height: 100px;
+        justify-content: center;
+        align-items: center;
+        overflow: visible;
+        position: relative;
+    }
+    #addItem{
+        font-size: 3rem;
+    }
+    body,
+    article{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+    }
+    .removeButton{
+        position: absolute;
+        top: -1rem;
+        right: -1rem;
+        background-color: black;
+        color: white;
+        padding: 0.5rem;
+        border-radius: 2rem;
+        width: 1rem;
+        height: 1rem;
+        text-align: center;
+        vertical-align: center;
+    }
+</style>
+
+<body>
+    <article id="article">
+        <div class="box" id="addItem">+</div>
+        <!-- <div class="box" contenteditable="true">
+            Edit Me
+            <div class="removeButton">x</div>
+        </div> -->
+    </article>
+</body>
+<script>
+    addItem.addEventListener("click", ()=>{
+        const  box = document.createElement("div");
+        box.classList.add("box");
+        box.setAttribute("contenteditable", "true");
+        box.innerHTML = `Edit Me!`;
+
+        const removeButton = document.createElement("div");
+        removeButton.classList.add("removeButton");
+        removeButton.innerText = "x";
+        removeButton.addEventListener("click", e => {
+            e.target.parentElement.remove();
+            //remove parent
+        });//end remove
+        box.appendChild(removeButton);
+
+        article.appendChild(box);
+    });//end click
+</script>
