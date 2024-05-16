@@ -10,7 +10,7 @@ const currency = v => "$" + v.toFixed(2);
 const showCatalog = () => catalog.forEach((p, i) => console.log("\n", i, p.name, p.price));
 const addToCart = (product_index, qty = 1) => cart.push({ "product": catalog[product_index], "qty": qty });
 const updateQty = (line_index, qty) => cart[line_index].qty = qty; 
-const removeLine = (line_index) =>  cart.splice(line_index, 1);
+const removeLine = (line_index) =>  cart.splice(line_index, 1); //remove from array
 
 const showCart = () => {
     console.log("\nCART:");
